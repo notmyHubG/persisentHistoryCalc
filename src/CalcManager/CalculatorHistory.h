@@ -33,6 +33,11 @@ namespace CalculationManager
         void ClearHistory();
         unsigned int AddItem(_In_ std::shared_ptr<HISTORYITEM> const& spHistoryItem);
         bool RemoveItem(unsigned int uIdx);
+
+        // Methods for persistent history
+        void SaveHistoryToFile(const std::wstring& filePath);
+        void LoadHistoryFromFile(const std::wstring& filePath);
+
         size_t MaxHistorySize() const
         {
             return m_maxHistorySize;
